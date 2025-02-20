@@ -6,56 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 2: HTML5 Web Storage API</title>
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles_vga.css" />
     <link rel="stylesheet" href="crt.css" />
 
     <script defer src="script.js"></script>
 </head>
 
+
 <body class="crt">
+    <div class="bodyContent">
+        <header>
+            <p>Cpan Webdows [Version 134.2025.02]</p>
+            <p>Using the HTML5 Web Storage API</p>
+            <p>Volume in C Drive has label boss_claw</p>
+            <p>77MHz CPU Clock</p>
+            <p>Starting BC-DOS</p>
+            <p>C:\> <span class='cursor'></span></p>
+        </header>
 
-    <body>
-        <div class="bodyContent">
-            <header>
-                <h1>**** CPAN134 WEB - ASSIGNMENT 2 ****</h1>
-                <p>
-                    Using the HTML5 Web Storage API
-                </p>
-            </header>
-
-            <main>
-                <div>
+        <main>
+            <div>
+                <div id="name_cta" class="border_double">
                     <h1>Welcome User!</h1>
 
                     <p>Enter your name</p>
-                    <input id="username" type="string">
+                    
+                    <div id="name_gui">
+                        <input id="username" class='cursor' type="string">
 
-                    <div class="h_container">
-                        <button id='save-btn' type="button">Save Name</button>
-                        <button id='clear-btn' type="button">Clear Name</button>
+                        <div class="h_container">
+                            <button id='save-btn' type="button">Save Name</button>
+                            <button id='clear-btn' type="button">Clear Name</button>
+                        </div>
                     </div>
-
-                    <p id="display-name">Your stored name will appear here!</p>
-
-
-                    <pre id="task_output">Task output appears here</pre>
                 </div>
 
-            </main>
-        </div>
+                <p id="display-name">Your stored name will appear here!</p>
 
-        <script>
-            // MANUALLY REG THE LOGIC TO THE BUTTON
-            document.getElementById("save-btn").addEventListener("click", () => { do_task(1, document.getElementById("username").value, document.getElementById("task_output"), document.getElementById("display-name")) });
-            document.getElementById("clear-btn").addEventListener("click", () => { do_task(2, document.getElementById("username").value, document.getElementById("task_output"), document.getElementById("display-name")) });
+                <pre id="task_output">Task output appears here</pre>
+            </div>
 
-            // RUN ON PAGE LOAD
-            document.addEventListener("DOMContentLoaded", function () {
-                update_name_display(document.getElementById("task_output"), document.getElementById("display-name"));
-            });
+        </main>
+    </div>
 
-        </script>
-    </body>
+    <script>
+        // MANUALLY REG THE LOGIC TO THE BUTTON
+        document.getElementById("save-btn").addEventListener("click", () => { do_task(1, document.getElementById("username").value, document.getElementById("task_output"), document.getElementById("display-name")) });
+        document.getElementById("clear-btn").addEventListener("click", () => { do_task(2, document.getElementById("username").value, document.getElementById("task_output"), document.getElementById("display-name")) });
+
+        // RUN ON PAGE LOAD
+        document.addEventListener("DOMContentLoaded", function () {
+            update_name_display(document.getElementById("task_output"), document.getElementById("display-name"));
+        });
+
+    </script>
+</body>
 
 </html>
 
