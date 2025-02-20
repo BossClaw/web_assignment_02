@@ -36,9 +36,9 @@ function wrap_name_str_with_mesg(name) {
     let hour = new Date().getHours();
     let greeting = "Hello";
 
-    console.log(`HOUR ${hour}`);
-
+    
     // TESTING
+    // NOTE - DON'T ADD TO GITHUB WITOUT DISABLING THIS ...again
     // hour = 0;
     // hour = 4;
     // hour = 8;
@@ -46,7 +46,8 @@ function wrap_name_str_with_mesg(name) {
     // hour = 16;
     // hour = 20;
     // hour = 23;
-    hour = 28;
+    // hour = 28;
+    // console.log(`HOUR ${hour}`);
 
     if (hour >= 0 && hour < 3) {
         greeting = "*yawn* [name]...";
@@ -93,11 +94,11 @@ function do_task(task_id, input_val_1, output_div, name_div) {
                 break;
             }
 
-
             // SAVE
             // When the **"Save Name"** button is clicked, save the user’s input to **localStorage**.
             localStorage.setItem('display_name', input_val_1.trim());
 
+            // UPDATE DISP & USER FEEDBACK
             update_name_display(output_div, name_div);
             resText = 'Name "' + input_val_1.trim() + '" stored';
             break;
@@ -107,7 +108,7 @@ function do_task(task_id, input_val_1, output_div, name_div) {
             // CLEAR
             localStorage.removeItem('display_name');
 
-            // UPDATE
+            // UPDATE DISP & USER FEEDBACK
             update_name_display(output_div, name_div);
             resText = 'Name cleared';
             break;
